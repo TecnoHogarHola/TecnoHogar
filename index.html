@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroHogar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="container nav">
+<a href="#inicio" class="logo">⚡ ElectroHogar</a>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#ofertas">Ofertas</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<button class="cart-button" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+</div>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+<div class="container hero-content">
+<div>
+<h1>Electrodomésticos para tu hogar</h1>
+<p>Encuentra productos para tu hogar a buenos precios.</p>
+<a href="#productos" class="btn">Ver productos</a>
+</div>
+<div class="hero-card">
+<div>🏠</div>
+<h3>Ofertas especiales</h3>
+<p>Hasta 30% de descuento</p>
+</div>
+</div>
+</section>
+
+<section class="categories">
+<div class="container">
+<h2>Categorías</h2>
+<div class="category-grid">
+<button class="category active" onclick="filterProducts('todos',this)">🏠<strong>Todos</strong></button>
+<button class="category" onclick="filterProducts('neveras',this)">🧊<strong>Neveras</strong></button>
+<button class="category" onclick="filterProducts('lavadoras',this)">🧺<strong>Lavadoras</strong></button>
+<button class="category" onclick="filterProducts('televisores',this)">📺<strong>Televisores</strong></button>
+<button class="category" onclick="filterProducts('cocina',this)">🍳<strong>Cocina</strong></button>
+<button class="category" onclick="filterProducts('pequenos',this)">☕<strong>Pequeños</strong></button>
+</div>
+</div>
+</section>
+
+<section id="productos" class="products-section">
+<div class="container">
+<div class="section-header">
+<div>
+<h2>Productos</h2>
+<p>Conoce nuestros productos disponibles.</p>
+</div>
+<input type="text" id="search" placeholder="Buscar producto..." oninput="searchProducts()">
+</div>
+<div id="products-grid" class="products-grid"></div>
+</div>
+</section>
+
+<section id="ofertas" class="offers">
+<div class="container">
+<h2>Oferta de la semana</h2>
+<p>Encuentra productos seleccionados con descuentos especiales.</p>
+<strong>30% DE DESCUENTO</strong>
+</div>
+</section>
+
+<section class="benefits">
+<div class="container benefits-grid">
+<div class="benefit">🚚<div><h3>Envíos</h3><p>Envíos seguros.</p></div></div>
+<div class="benefit">🔒<div><h3>Compra segura</h3><p>Compra con seguridad.</p></div></div>
+<div class="benefit">⭐<div><h3>Calidad</h3><p>Productos confiables.</p></div></div>
+<div class="benefit">💬<div><h3>Atención</h3><p>Estamos para ayudarte.</p></div></div>
+</div>
+</section>
+
+<section id="contacto" class="contact">
+<div class="container">
+<div class="contact-header">
+<h2>Contacto</h2>
+<p>Déjanos tu mensaje.</p>
+</div>
+<form id="contact-form">
+<div class="form-row">
+<input type="text" placeholder="Nombre completo" required>
+<input type="email" placeholder="Correo electrónico" required>
+</div>
+<input type="text" placeholder="Asunto" required>
+<textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+<button type="submit" class="btn">Enviar mensaje</button>
+</form>
+</div>
+</section>
+</main>
+
+<aside id="cart" class="cart">
+<div class="cart-header">
+<h2>🛒 Mi carrito</h2>
+<button onclick="toggleCart()">✕</button>
+</div>
+<div id="cart-items" class="cart-items">
+<p class="empty-cart">Tu carrito está vacío.</p>
+</div>
+<div class="cart-footer">
+<div class="total">
+<span>Total:</span>
+<strong id="cart-total">$0</strong>
+</div>
+<button class="btn checkout" onclick="checkout()">Finalizar compra</button>
+</div>
+</aside>
+
+<div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+<footer>
+<div class="container footer-grid">
+<div>
+<a href="#inicio" class="logo">⚡ ElectroHogar</a>
+<p>Tu tienda online de electrodomésticos.</p>
+</div>
+<div>
+<h3>Enlaces</h3>
+<a href="#inicio">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#ofertas">Ofertas</a>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>📍 Bogotá, Colombia</p>
+<p>📞 +57 300 000 0000</p>
+<p>✉️ contacto@electrohogar.com</p>
+</div>
+</div>
+<div class="copyright">© 2026 ElectroHogar</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
